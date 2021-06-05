@@ -65,6 +65,20 @@ public function delete($id)
     $pelanggan->delete();
     return redirect()->back();
 }
+
+public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+     
+         // mengambil data dari table pegawai sesuai pencarian data
+        $pelanggan = DB::table('pelanggan')
+        ->where('nama','like',"%".$cari."%")
+        ->paginate();
+     
+            // mengirim data pegawai ke view index
+        return view('pelanggan0221',['pelanggan' => $pelanggan]);
+    }
     /**
      * Show the form for creating a new resource.
      *

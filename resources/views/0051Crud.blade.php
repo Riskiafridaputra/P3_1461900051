@@ -9,7 +9,10 @@
     <body>
         <div class="container">
             <div class="card mt-5">
-               
+            <p>Cari Data Pelanggan :</p>
+	        <form action="/0051Crud/carihome" method="GET">
+		    <input type="text" name="cari" placeholder="Cari Pelanggan .." value="{{ old('cari') }}">
+		    <input type="submit" value="CARI">
                 <div class="card-body">
                     <a href="/pelanggan/tambah" class="btn btn-primary">Input Pelanggan Baru</a>
                     <br/>
